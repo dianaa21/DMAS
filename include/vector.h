@@ -15,7 +15,6 @@ public:
 	using const_reference = const value_type&;
 	using pointer = value_type*;
 	using const_pointer = const value_type*;
-
 	Vector(){
 		data_ = new value_type[1];
 		data_[0] = 0;
@@ -83,13 +82,13 @@ public:
 	}
 	T& at(size_type pos) {
 		if (pos >= size_) 
-			throw std::out_of_range();
+			throw std::out_of_range("out_of_range");
 		value_type *pt = data_ + pos;
 		return *(pt);
 	}
 	const T& at(size_type pos) const {
 		if (pos >= size_) 
-			throw std::out_of_range();
+			throw std::out_of_range("out_of_range");
 		char *temp = data_ + pos;
 		return *(temp);
 	}
